@@ -1,0 +1,5 @@
+name: AntiHaxerman
+version: 1.0
+author: Tecnio
+main: me.tecnio.anticheat.AntiCheatPlugin
+load: STARTUP
