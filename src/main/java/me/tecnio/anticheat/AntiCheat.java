@@ -3,6 +3,7 @@ package me.tecnio.anticheat;
 import io.github.retrooper.packetevents.PacketEvents;
 import io.github.retrooper.packetevents.utils.server.ServerVersion;
 import lombok.Getter;
+import me.tecnio.anticheat.check.manager.CheckManager;
 import me.tecnio.anticheat.data.PlayerDataManager;
 import me.tecnio.anticheat.listener.bukkit.BukkitEventListener;
 import me.tecnio.anticheat.listener.bukkit.RegistrationListener;
@@ -50,8 +51,9 @@ public enum AntiCheat {
      */
     public void init(final AntiCheatPlugin plugin) {
         playerDataManager = new PlayerDataManager();
-
         Bukkit.getOnlinePlayers().forEach(player -> playerDataManager.addPlayer(player));
+
+        CheckManager.setup();
 
         startPacketEvents(plugin);
         handleBukkit(plugin);
