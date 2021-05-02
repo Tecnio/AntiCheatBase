@@ -83,9 +83,6 @@ public enum AntiCheat {
      */
     private void loadPacketEvents(final AntiCheatPlugin plugin) {
         PacketEvents.create(plugin).getSettings()
-                .injectAsync(true)
-                .ejectAsync(true)
-                .injectEarly(true)
                 .checkForUpdates(false)
                 .backupServerVersion(ServerVersion.v_1_7_10);
 
@@ -98,7 +95,7 @@ public enum AntiCheat {
      * @param plugin Main plugin instance.
      */
     private void startPacketEvents(final AntiCheatPlugin plugin) {
-        PacketEvents.get().init(plugin);
+        PacketEvents.get().init();
 
         PacketEvents.get().getEventManager().registerListener(new PacketListener());
     }

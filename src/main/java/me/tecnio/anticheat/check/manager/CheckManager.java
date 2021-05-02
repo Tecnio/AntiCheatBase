@@ -2,6 +2,7 @@ package me.tecnio.anticheat.check.manager;
 
 import lombok.experimental.UtilityClass;
 import me.tecnio.anticheat.check.Check;
+import me.tecnio.anticheat.check.impl.combat.AuraA;
 import me.tecnio.anticheat.data.PlayerData;
 
 import java.lang.reflect.Constructor;
@@ -12,6 +13,7 @@ import java.util.List;
 public final class CheckManager {
 
     public final Class<?>[] CHECKS = new Class[]{
+            AuraA.class,
     };
 
     private final List<Constructor<?>> CONSTRUCTORS = new ArrayList<>();

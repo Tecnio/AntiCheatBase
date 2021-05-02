@@ -1,6 +1,6 @@
 package me.tecnio.anticheat.listener.packet;
 
-import io.github.retrooper.packetevents.event.PacketListenerDynamic;
+import io.github.retrooper.packetevents.event.PacketListenerAbstract;
 import io.github.retrooper.packetevents.event.impl.PacketPlayReceiveEvent;
 import io.github.retrooper.packetevents.event.impl.PacketPlaySendEvent;
 import io.github.retrooper.packetevents.event.priority.PacketEventPriority;
@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
  * When we receive a packet the onPacketPlayReceive event is called and we can deal with the packet there.
  * And when we send a packet we can listen to it on onPacketPlaySend.
  */
-public final class PacketListener extends PacketListenerDynamic {
+public final class PacketListener extends PacketListenerAbstract {
 
     private final ExecutorService packetExecutor = Executors.newSingleThreadExecutor();
 
